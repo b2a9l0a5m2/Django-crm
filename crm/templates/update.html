@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Update member</h1>
+<form action="{% url 'updaterecord' current_record.id %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="first_name" value={{current_record.first_name}} placeholder="Firstname"  ><br/><br/>
+    <input type="text" name="last_name" value={{current_record.last_name}} placeholder="Lastname"><br/><br/>
+    <input type="email" name="email" value={{current_record.email}} placeholder="email" ><br/><br/>
+    <input type="text" name="phone" value={{current_record.phone}} placeholder="phone"><br/><br/>
+    <input type="text" name="address" value={{current_record.address}} placeholder="address"><br/><br/>
+    <input type="text" name="city" value={{current_record.city}} placeholder="city" ><br/><br/>
+    <input type="text" name="state" value={{current_record.state}} placeholder="state"><br/><br/>
+    <input type="text" name="Zipcode" value={{current_record.Zipcode}}><br/><br/>
+    <button type="submit" class="btn btn-secondary">Update </button> 
+
+
+{% endblock %}
